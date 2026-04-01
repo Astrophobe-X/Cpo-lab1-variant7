@@ -1,8 +1,7 @@
 # GROUP-7 - lab 1 - variant 7
 
-This is an example project which demonstrates project structure and necessary
-CI checks. It is not the best structure for real-world projects, but good
-enough for educational purposes.
+Implementation of a mutable hash dictionary using separate chaining collision resolution. 
+Supports arbitrary keys including `None`, with proper type hints and comprehensive testing.
 
 ## Project structure
 
@@ -13,20 +12,21 @@ enough for educational purposes.
 ## Features
 
 - PBT: `test_add_commutative`
+- Use the built-in list for storing buckets and a bucket itself
+- Support for `None` as valid key and value
+- Implement functions/methods for getting/setting value by key
 
 ## Contribution
 
-- Aleksandr Penskoi (EMAIL) -- all work.
+- Zheng Rongzhen (1661342449@qq.com) -- all work.
 
 ## Changelog
 
-- 29.03.2022 - 2
-  - Add test coverage.
-- 29.03.2022 - 1
-  - Update README. Add formal sections.
-- 29.03.2022 - 0
+- 31.03.2026 - 1
+  - Update README.
+- 31.03.2022 - 0
   - Initial
 
 ## Design notes
 
-- ...
+- 
