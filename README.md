@@ -8,7 +8,7 @@ Supports arbitrary keys including `None`, with proper type hints and comprehensi
 - `foo.py` -- implementation of `Foo` class with `hello` and `add` features.
    Stateless.
 - `foo_test.py` -- unit and PBT tests for `Foo`.
-
+c
 ## Features
 
 - PBT: `test_add_commutative`
@@ -22,6 +22,10 @@ Supports arbitrary keys including `None`, with proper type hints and comprehensi
 
 ## Changelog
 
+- 2.4.2026 - 1
+  - Implement hash dictionary.
+- 1.4.2026 - 1
+  - Update hash_dict.
 - 31.03.2026 - 1
   - Update README.
 - 31.03.2022 - 0
