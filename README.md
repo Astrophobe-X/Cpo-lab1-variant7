@@ -1,17 +1,21 @@
 # GROUP-7 - lab 1 - variant 7
 
-Implementation of a mutable hash dictionary using separate chaining collision resolution. 
-Supports arbitrary keys including `None`, with proper type hints and comprehensive testing.
+Implementation of a mutable hash dictionary using separate
+chaining collision resolution.
+
+Supports arbitrary keys including `None`, with proper type
+hints and comprehensive testing.
 
 ## Project structure
 
-- `foo.py` -- implementation of `Foo` class with `hello` and `add` features.
-   Stateless.
-- `foo_test.py` -- unit and PBT tests for `Foo`.
-c
+- `hash_dict.py` -- implementation of the `HashMap` class.
+  Stateful. Uses built-in lists for buckets.
+- `hash_dict_test.py` -- unit and PBT tests for `HashMap`.
+
 ## Features
 
-- PBT: `test_add_commutative`
+- PBT: `test_concat_associativity` (Monoid law)
+- PBT: `test_set_get_roundtrip` (State consistency)
 - Use the built-in list for storing buckets and a bucket itself
 - Support for `None` as valid key and value
 - Implement functions/methods for getting/setting value by key
@@ -33,4 +37,6 @@ c
 
 ## Design notes
 
-- 
+- The dictionary implements the Monoid interface with `empty`
+  and `concat` methods.
+- Type hints are strictly enforced to pass mypy checks.
