@@ -28,22 +28,22 @@ hints and comprehensive testing.
 
 ## Changelog
 
-- 15.4.2026 - 4
-  - Sanity check.
-- 15.4.2026 - 4
-  - Improve all.
-- 4.4.2026 - 3
-  - Implement PBT tests.
+- 15.4.2026 - 7
+  Sanity check.
+- 15.4.2026 - 6
+  Improve all.
+- 4.4.2026 - 5
+  Implement PBT tests.
+- 2.4.2026 - 4
+  Implement unit tests.
 - 2.4.2026 - 3
-  - Implement unit tests.
-- 2.4.2026 - 3
-  - Implement hash dictionary.
+  Implement hash dictionary.
 - 1.4.2026 - 2
-  - Update hash_dict.
+  Update hash_dict.
 - 31.03.2026 - 1
-  - Update README.
+  Update README.
 - 31.03.2022 - 0
-   Initial
+  Initial
 
 ## Design notes
 
