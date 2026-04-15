@@ -17,9 +17,9 @@ hints and comprehensive testing.
 - Support for `None` as valid key and value
 - Implement functions/methods for getting/setting value by key
 - Type hints included for better readability.
-- Functional methods `map` to apply a function to all values, 
+- Functional methods `map` to apply a function to all values,
   and `reduce` to combine values into a single result.
-- Monoid interface `empty` to create an empty map, and `concat` 
+- Monoid interface `empty` to create an empty map, and `concat`
   to merge two maps together.
 
 ## Contribution
@@ -28,17 +28,27 @@ hints and comprehensive testing.
 
 ## Changelog
 
-- 2.4.2026 - 1
+- 15.4.2026 - 4
+  - Improve all.
+- 4.4.2026 - 3
+  - Implement PBT tests.
+- 2.4.2026 - 3
+  - Implement unit tests.
+- 2.4.2026 - 3
   - Implement hash dictionary.
-- 1.4.2026 - 1
+- 1.4.2026 - 2
   - Update hash_dict.
 - 31.03.2026 - 1
   - Update README.
 - 31.03.2022 - 0
-  - Initial
+   Initial
 
 ## Design notes
 
 - Type hints are strictly enforced to pass mypy checks.
-- Map Behavior: The map method only transforms the values and leaves the keys completely alone. This is because changing a key would mess up its bucket location.
-- Concat Behavior: When using concat to merge two maps, if they happen to share the same key, the value from the second map will overwrite the value from the first map.
+- Map Behavior: The map method only transforms the values and
+  leaves the keys completely alone. This is because changing a
+  key would mess up its bucket location.
+- Concat Behavior: When using concat to merge two maps,if they
+  happen to share the same key, the value from the second map
+  will overwrite the value from the first map.

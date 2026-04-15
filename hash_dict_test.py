@@ -7,7 +7,7 @@ class TestHashMapUnit:
     """Example-based unit tests for specific edge cases."""
 
     def test_none_key_and_value(self):
-        """Verify that None is safely handled 
+        """Verify that None is safely handled
         as both key and value."""
         h = HashMap()
         h.set(None, "none_value")
@@ -19,7 +19,7 @@ class TestHashMapUnit:
         assert h.get("none_key") is None
 
     def test_key_error_raised(self):
-        """Verify that missing keys raise KeyError 
+        """Verify that missing keys raise KeyError
         instead of returning None."""
         h = HashMap()
         with pytest.raises(KeyError):
@@ -28,7 +28,7 @@ class TestHashMapUnit:
             h.remove("missing_key")
 
     def test_set_updates_existing_key(self):
-        """Verify that setting an existing key updates value 
+        """Verify that setting an existing key updates value
         without increasing size."""
         h = HashMap()
         h.set("a", 1)
@@ -51,7 +51,7 @@ class TestHashMapUnit:
         assert h.member("y") is False
 
     def test_remove_decreases_size(self):
-        """Verify that removing an element decreases 
+        """Verify that removing an element decreases
         size and subsequent remove fails."""
         h = HashMap()
         h.set("a", 1)
@@ -107,7 +107,7 @@ class TestHashMapPBT:
 
     @given(dict_strategy)
     def test_map_preserves_keys_and_structure(self, data: dict):
-        """Property: map applies function to values but 
+        """Property: map applies function to values but
         preserves keys and structure."""
         h = HashMap()
         h.from_list(list(data.items()))
@@ -120,7 +120,7 @@ class TestHashMapPBT:
 
     @given(dict_strategy, dict_strategy, dict_strategy)
     def test_concat_associativity(self, d1: dict, d2: dict, d3: dict):
-        """Property: concat satisfies the associativity 
+        """Property: concat satisfies the associativity
         law (a+b)+c == a+(b+c)."""
         h1, h2, h3 = HashMap(), HashMap(), HashMap()
         h1.from_list(list(d1.items()))
