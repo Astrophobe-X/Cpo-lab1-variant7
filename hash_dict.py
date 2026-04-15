@@ -6,7 +6,9 @@ class HashMap:
 
     def __init__(self, capacity: int = 16) -> None:
         self._capacity: int = max(capacity, 1)
-        self._buckets: list[list[Tuple[Any, Any]]] = [[] for _ in range(self._capacity)]
+        self._buckets: list[list[Tuple[Any, Any]]] = [
+            [] for _ in range(self._capacity)
+        ]
         self._size: int = 0
 
     def _bucket_index(self, key: Any) -> int:

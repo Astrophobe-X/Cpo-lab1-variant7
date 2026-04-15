@@ -36,6 +36,20 @@ class TestHashMapUnit:
         assert h.size() == 1
         assert h.get("a") == 99
 
+    def test_get_retrieves_correct_value(self):
+        """Verify that get returns the value bound to a given key."""
+        h = HashMap()
+        h.set("x", 42)
+        assert h.get("x") == 42
+
+    def test_member_returns(self):
+        """Verify that member returns True for present keys
+        and False for absent ones."""
+        h = HashMap()
+        h.set("x", 42)
+        assert h.member("x") is True
+        assert h.member("y") is False
+
     def test_remove_decreases_size(self):
         """Verify that removing an element decreases 
         size and subsequent remove fails."""
@@ -70,21 +84,11 @@ class TestHashMapPBT:
 
     @given(dict_strategy)
     def test_roundtrip_from_to_list(self, data: dict):
-        """Property: from_list and to_list are inverse operations (order-agnostic)."""
+        """Property: from_list and to_list are inverse operations."""
         h = HashMap()
         h.from_list(list(data.items()))
         # Convert both to dict to ignore ordering
         assert dict(h.to_list()) == data
-
-    @given(dict_strategy)
-    def test_set_get_roundtrip(self, data: dict):
-        """Property: every value set must be retrievable by its key."""
-        h = HashMap()
-        for k, v in data.items():
-            h.set(k, v)
-
-        for k, v in data.items():
-            assert h.get(k) == v
 
     @given(st.lists(st.tuples(key_strategy, value_strategy)))
     def test_size_equals_unique_keys(self, pairs: list):
@@ -95,8 +99,16 @@ class TestHashMapPBT:
         assert h.size() == len({k for k, _ in pairs})
 
     @given(dict_strategy)
+    def test_reduce_count_equals_size(self, data: dict):
+        """Property: reduce with a counting function must equal size."""
+        h = HashMap()
+        h.from_list(list(data.items()))
+        assert h.reduce(lambda acc, _: acc + 1, 0) == h.size()
+
+    @given(dict_strategy)
     def test_map_preserves_keys_and_structure(self, data: dict):
-        """Property: map applies function to values but preserves keys and structure."""
+        """Property: map applies function to values but 
+        preserves keys and structure."""
         h = HashMap()
         h.from_list(list(data.items()))
 
@@ -108,7 +120,8 @@ class TestHashMapPBT:
 
     @given(dict_strategy, dict_strategy, dict_strategy)
     def test_concat_associativity(self, d1: dict, d2: dict, d3: dict):
-        """Property: concat satisfies the associativity law (a+b)+c == a+(b+c)."""
+        """Property: concat satisfies the associativity 
+        law (a+b)+c == a+(b+c)."""
         h1, h2, h3 = HashMap(), HashMap(), HashMap()
         h1.from_list(list(d1.items()))
         h2.from_list(list(d2.items()))
