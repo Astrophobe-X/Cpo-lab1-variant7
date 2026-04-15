@@ -29,6 +29,8 @@ hints and comprehensive testing.
 ## Changelog
 
 - 15.4.2026 - 4
+  - Sanity check.
+- 15.4.2026 - 4
   - Improve all.
 - 4.4.2026 - 3
   - Implement PBT tests.
