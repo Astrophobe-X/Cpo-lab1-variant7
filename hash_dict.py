@@ -115,13 +115,13 @@ class HashMap(Generic[K, V]):
 
     def __eq__(self, other: object) -> bool:
         """Compare two HashMaps for equality."""
-    
+
         if not isinstance(other, HashMap):
             return False
-    
+
         if self._size != other._size:
             return False
-    
+
         for k, v in self:
             if not other.member(k) or other.get(k) != v:
                 return False
