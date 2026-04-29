@@ -28,6 +28,8 @@ hints and comprehensive testing.
 
 ## Changelog
 
+- 15.4.2026 - 8
+  Generics and `_eq_`.
 - 15.4.2026 - 7
   Sanity check.
 - 15.4.2026 - 6
